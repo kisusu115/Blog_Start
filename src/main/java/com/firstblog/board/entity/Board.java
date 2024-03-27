@@ -14,11 +14,22 @@ public class Board {
     private Integer id;
     private String title;
     private String content;
+    private String filename;
+    private String filepath;
 
     public String getTitle() {
         return title;
     }
     public String getContent() {
         return content;
+    }
+
+    public void setTitle(String title) { this.title = title; }
+    public void setContent(String content) {
+        this.content = content;
+    }
+    public void setFileName(String filename) { this.filename = filename; }
+    public void setFilePath(String filepath) {
+        this.filepath = filepath;
     }
 }
