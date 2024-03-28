@@ -29,7 +29,5 @@ public class Board {
         this.content = content;
     }
     public void setFileName(String filename) { this.filename = filename; }
-    public void setFilePath(String filepath) {
-        this.filepath = filepath;
-    }
+    public void setFilePath(String filepath) { this.filepath = filepath; }
 }
