@@ -3,6 +3,8 @@ package com.firstblog.board.service;
 import com.firstblog.board.entity.Board;
 import com.firstblog.board.repository.BoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -34,8 +36,12 @@ public class BoardService {
     }
 
     //게시글 리스트 처리
-    public List<Board> boardList(){
-        return boardRepository.findAll();
+    public Page<Board> boardList(Pageable pageable){
+        return boardRepository.findAll(pageable);
+    }
+
+    public Page<Board> boardSearchList(String searchKeyword, Pageable pageable){
+        return boardRepository.findByTitleContaining(searchKeyword, pageable);
     }
     
     //특정 게시글 불러오기
